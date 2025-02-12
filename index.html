@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin's Graduation Party 2025</title>
+  <!-- Title Font -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet" />
+  <!-- Content Box Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Particle Background Canvas -->
+  <canvas id="background-canvas"></canvas>
+  
+  <header>
+    <h1>Kevin's Graduation Party 2025</h1>
+    <p>Encryption Unlocked: You're Invited!</p>
+    <!-- Spotify Link: Music note icon with "Playlist" text -->
+    <a href="https://open.spotify.com/playlist/4NMbJHYi13hKpfbqq37mIJ?si=821e72a962364025&pt=466f9633e21dbaf1d641612e2a9c538b" 
+       target="_blank" 
+       id="spotify-link" 
+       title="Open Graduation Playlist">♪ Playlist</a>
+  </header>
+  
+  <main>
+    <!-- Invitation Section with updated address -->
+    <section class="invitation">
+      <h2>Invitation</h2>
+      <p>
+        Join us as we celebrate the achievements of <strong>Kevin Elremawy</strong> in the realm of 
+        <span id="treasure2-link">cyber</span> security.
+      </p>
+      <p><strong>Date:</strong> May 18, 2025 at 5:00 PM</p>
+      <p>
+        <strong>Location:</strong> 6033 Red Spur Ct. Fontana, CA 92336 
+        <br />(Gate Code: 5722)
+      </p>
+      <div id="countdown"></div>
+    </section>
+    
+    <!-- Calendar Section -->
+    <section class="calendar">
+      <h2>Add to Calendar</h2>
+      <p>Add this event directly to your calendar:</p>
+      <!-- Google Calendar Link -->
+      <a href="https://calendar.google.com/calendar/r/eventedit?text=Kevin's+Graduation+Party+2025&dates=20250518T170000/20250518T190000&details=Join+us+to+celebrate+Kevin's+Graduation+Party+2025.&location=6033+Red+Spur+Ct.+Fontana,+CA+92336+(Gate+Code:+5722)" 
+         target="_blank" 
+         class="calendar-link">Google Calendar</a>
+      <!-- Apple/Outlook Calendar Link (ICS data URI) -->
+      <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Kevin's%20Graduation%20Party%202025%0ADTSTART:20250518T170000%0ADTEND:20250518T190000%0ALOCATION:6033%20Red%20Spur%20Ct.%20Fontana,%20CA%2092336%20(Gate%20Code:%205722)%0ADESCRIPTION:Join%20us%20to%20celebrate%20Kevin's%20Graduation%20Party%202025.%0AEND:VEVENT%0AEND:VCALENDAR" 
+         class="calendar-link" download="KevinsGraduationParty2025.ics">Apple/Outlook Calendar</a>
+    </section>
+    
+    <!-- Puzzle Section to unlock RSVP -->
+    <section class="puzzle">
+      <h2>Unlock RSVP</h2>
+      <p>Solve this puzzle to unlock the RSVP form:</p>
+      <p><em>I have keys but no locks, I have space but no room, and you can enter but never leave. What am I?</em></p>
+      <form id="puzzle-form">
+        <input type="text" id="puzzle-input" placeholder="Your answer" required />
+        <button type="submit">Unlock RSVP</button>
+      </form>
+      <div id="puzzle-message"></div>
+      <button id="hint-button">Show Hint</button>
+      <div id="hint-text" style="display: none;">You're using me right now</div>
+    </section>
+    
+    <!-- RSVP Form (initially hidden) -->
+    <section class="rsvp" id="rsvp-section" style="display: none;">
+      <h2>RSVP</h2>
+      <form id="rsvp-form" action="https://formspree.io/f/xbldayzd" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <br />
+        <button type="submit">Submit RSVP</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>
+      &copy; 2025 <span id="treasure1-link">K</span>evin Elremawy. All rights reserved.
+    </p>
+  </footer>
+  
+  <!-- Modal for Treasure 1 -->
+  <div id="treasure1-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="treasure1-modal">&times;</span>
+      <h2>Treasure 1 Found!</h2>
+      <p>You've found the easy treasure hidden in the footer. Please enter your details to claim your prize.</p>
+      <form class="treasure-form" data-treasure="Treasure 1">
+        <label for="t1-name">Name:</label>
+        <input type="text" id="t1-name" required />
+        <br />
+        <label for="t1-phone">Phone Number:</label>
+        <input type="tel" id="t1-phone" required />
+        <br />
+        <button type="submit">Submit Claim</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal for Treasure 2 -->
+  <div id="treasure2-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="treasure2-modal">&times;</span>
+      <h2>Treasure 2 Found!</h2>
+      <p>You've discovered a hidden treasure! Please enter your details to claim your prize.</p>
+      <form class="treasure-form" data-treasure="Treasure 2">
+        <label for="t2-name">Name:</label>
+        <input type="text" id="t2-name" required />
+        <br />
+        <label for="t2-phone">Phone Number:</label>
+        <input type="tel" id="t2-phone" required />
+        <br />
+        <button type="submit">Submit Claim</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* Particle Background styling */
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Global Body Styling with blue theme */
+  body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #001f3f, #003366, #001f3f, #000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  header, footer {
+    background-color: #333;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+  }
+  
+  h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  h1 {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+  }
+  
+  h1:hover {
+    animation: glitch 1s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
+    20% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+    40% { text-shadow: 2px -2px #ff00ff, -2px 2px #00ffff; }
+    60% { text-shadow: -2px 2px #ff00ff, 2px -2px #00ffff; }
+    80% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
+    100% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+  }
+  
+  main {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .invitation,
+  .puzzle,
+  .rsvp,
+  .calendar {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #222;
+    border: 2px solid #c72c41;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Calendar Section Styling */
+  .calendar h2 {
+    margin-top: 0;
+  }
+  
+  .calendar a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #c72c41;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .calendar a:hover {
+    background-color: #e94b57;
+  }
+  
+  /* Spotify Link: Music note icon with "Playlist" text in top-right */
+  #spotify-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px; /* increased size */
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+  }
+  
+  /* Subtle Treasure Links Styling for Treasure 1 & 2 */
+  #treasure1-link,
+  #treasure2-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  /* Puzzle and Hint Message Styling */
+  #puzzle-message, #hint-text {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  #hint-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #c72c41;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  #hint-button:hover {
+    background-color: #e94b57;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+  }
+  
+  .modal-content {
+    background-color: #222;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #c72c41;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #fff;
+  }
+  
+  .treasure-form input {
+    padding: 8px;
+    margin: 10px 0;
+    width: 80%;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .treasure-form button {
+    padding: 10px 20px;
+    background-color: #c72c41;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .treasure-form button:hover {
+    background-color: #e94b57;
+  }
+  
