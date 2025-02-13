@@ -86,7 +86,55 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   
-    // Note: The RSVP form now submits normally to Formspree.
-    // Remove any custom submit handler if it prevents default submission.
+    // Remove custom RSVP form submission handler so the form submits naturally to Formspree.
+    // (Ensure that the <form> element for RSVP is not prevented from its default behavior.)
+    
+    // Particle Background Animation on Canvas
+    const canvasEl = document.getElementById('background-canvas');
+    const ctx = canvasEl.getContext('2d');
+    function resizeCanvas() {
+      canvasEl.width = window.innerWidth;
+      canvasEl.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    const particles = [];
+    const particleCount = 100;
+    function initParticles() {
+      particles.length = 0;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvasEl.width,
+          y: Math.random() * canvasEl.height,
+          radius: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+        });
+      }
+    }
+    function updateParticles() {
+      for (let p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvasEl.width) p.dx = -p.dx;
+        if (p.y < 0 || p.y > canvasEl.height) p.dy = -p.dy;
+      }
+    }
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = 'rgba(0, 191, 255, 0.7)';
+        ctx.fill();
+      }
+    }
+    function animateParticles() {
+      updateParticles();
+      drawParticles();
+      requestAnimationFrame(animateParticles);
+    }
+    initParticles();
+    animateParticles();
   });
   
