@@ -86,9 +86,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   
-    // Remove custom RSVP form submission handler so the form submits naturally to Formspree.
-    // (Ensure that the <form> element for RSVP is not prevented from its default behavior.)
-    
+    // RSVP Form Submission Handler: Let the form submit normally to Formspree
+    const rsvpForm = document.getElementById('rsvp-form');
+    rsvpForm.addEventListener('submit', function (e) {
+      // Do not prevent default submission so Formspree can process it.
+      // Optionally, you can display an alert here if desired.
+      alert("RSVP submitted successfully!");
+    });
+  
     // Particle Background Animation on Canvas
     const canvasEl = document.getElementById('background-canvas');
     const ctx = canvasEl.getContext('2d');

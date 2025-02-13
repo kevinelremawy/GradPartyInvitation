@@ -62,7 +62,8 @@
   
   .invitation,
   .puzzle,
-  .rsvp {
+  .rsvp,
+  .calendar {
     margin: 20px auto;
     max-width: 500px;
     padding: 20px;
@@ -70,6 +71,26 @@
     border: 2px solid #c72c41;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Calendar Section Styling */
+  .calendar h2 {
+    margin-top: 0;
+  }
+  
+  .calendar a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #c72c41;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .calendar a:hover {
+    background-color: #e94b57;
   }
   
   /* Spotify Link: Music note icon with "Playlist" text in top-right */
